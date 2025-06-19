@@ -1,6 +1,8 @@
 # qMRI Colors
 
-A Python package providing custom colormaps (lipari and navia) for quantitative MRI visualization in both matplotlib and vispy.
+A Python package providing the recommended colormaps from [Fuderer et al. (2024)](https://pubmed.ncbi.nlm.nih.gov/39415361/) for quantitative MRI visualization. This package makes it easy to use the scientifically-optimized lipari and navia colormaps in both matplotlib and vispy, eliminating the need for manual colormap registration in each project.
+
+The colormaps are based on the research presented in "Colormaps for quantitative magnetic resonance imaging" (Magnetic Resonance in Medicine, 2024) and are sourced from the [colorResources repository](https://github.com/mfuderer/colorResources).
 
 ## Installation
 
@@ -105,8 +107,10 @@ qmricolors.register_all_colormaps()
 
 ## Available Colormaps
 
-- **lipari**: A blue-to-white colormap suitable for quantitative MRI visualization
-- **navia**: A red-to-white colormap suitable for quantitative MRI visualization
+- **lipari**: A scientifically-optimized colormap for quantitative MRI visualization
+- **navia**: A scientifically-optimized colormap for quantitative MRI visualization
+
+These colormaps were designed based on perceptual uniformity principles and extensive testing for quantitative medical imaging, as described in [Fuderer et al. (2024)](https://pubmed.ncbi.nlm.nih.gov/39415361/).
 
 ## Customizing Colormaps
 
@@ -138,6 +142,11 @@ python example.py
 - matplotlib >= 3.10.3
 - vispy >= 0.15.2
 - numpy >= 1.21.0
+
+## References
+
+- Fuderer, M., et al. (2024). Colormaps for quantitative magnetic resonance imaging. *Magnetic Resonance in Medicine*. https://pubmed.ncbi.nlm.nih.gov/39415361/
+- Original colormap resources: https://github.com/mfuderer/colorResources
 
 ## License
 
