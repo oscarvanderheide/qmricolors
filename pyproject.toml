@@ -7,3 +7,8 @@ dependencies = [
     "vispy>=0.15.2",
     "numpy>=1.21.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pyqt5>=5.15.11",
+]

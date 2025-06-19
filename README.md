@@ -19,6 +19,9 @@ For development:
 git clone <repository-url>
 cd qmricolors
 uv sync
+
+# Install in development mode to use examples
+uv pip install -e .
 ```
 
 ## Usage
@@ -78,6 +81,11 @@ view.camera.set_range()
 
 app.run()
 ```
+
+**Note**: If the VisPy window doesn't appear, this may be due to GUI backend issues. Try:
+1. Installing a GUI backend: `pip install PyQt5` or `pip install PySide2`
+2. On macOS, you may need to run Python from the terminal rather than an IDE
+3. Use the simple test script: `python test_vispy_simple.py`
 
 ### Direct API Usage
 
