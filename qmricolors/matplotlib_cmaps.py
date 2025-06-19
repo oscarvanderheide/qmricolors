@@ -17,9 +17,15 @@ def _load_colormap_data(filename):
     
     colors = []
     with open(filepath, 'r') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            colors.append([float(row['r']), float(row['g']), float(row['b'])])
+        for line in f:
+            # Skip empty lines
+            line = line.strip()
+            if not line:
+                continue
+            # Split the space-separated RGB values
+            rgb_values = line.split()
+            if len(rgb_values) == 3:
+                colors.append([float(rgb_values[0]), float(rgb_values[1]), float(rgb_values[2])])
     
     return colors
 
