@@ -1,0 +1,9 @@
+[project]
+name = "qmricolors"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.3",
+    "vispy>=0.15.2",
+    "numpy>=1.21.0",
+]
