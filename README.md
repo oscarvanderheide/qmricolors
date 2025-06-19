@@ -6,19 +6,19 @@ The colormaps are based on the research presented in "Colormaps for quantitative
 
 ## Installation
 
-Install the package using uv (recommended) or pip:
+Install the package directly from GitHub using uv (recommended) or pip:
 
 ```bash
 # Using uv
-uv add qmricolors
+uv add git+https://github.com/oscarvanderheide/qmricolors.git
 
 # Using pip
-pip install qmricolors
+pip install git+https://github.com/oscarvanderheide/qmricolors.git
 ```
 
 For development:
 ```bash
-git clone <repository-url>
+git clone git@github.com:oscarvanderheide/qmricolors.git
 cd qmricolors
 uv sync
 
@@ -119,22 +119,38 @@ To use your own colormap data, replace the CSV files in the package:
 1. `qmricolors/lipari.csv`
 2. `qmricolors/navia.csv`
 
-The CSV format should have columns `r`, `g`, `b` with values between 0 and 1:
+The CSV format should contain space-separated RGB values (without headers), with values between 0 and 1:
 
-```csv
-r,g,b
-0.0,0.0,0.2
-0.0,0.1,0.4
-0.0,0.2,0.6
+```
+0.011370 0.073240 0.148284
+0.013965 0.079062 0.155370
+0.015899 0.084718 0.162521
+0.017234 0.090035 0.169728
 ...
 ```
 
-## Example
+Each line represents one color with three space-separated values for red, green, and blue components.
 
-Run the included example script to see the colormaps in action:
+## Examples
 
+The package includes several example scripts to demonstrate usage:
+
+### General Example
+Test basic colormap functionality:
 ```bash
-python example.py
+uv run qmricolors/examples/example.py
+```
+
+### Matplotlib Example
+See matplotlib-specific plotting examples:
+```bash
+uv run qmricolors/examples/matplotlib_example.py
+```
+
+### VisPy Example
+Interactive 3D visualization with VisPy (requires GUI):
+```bash
+uv run qmricolors/examples/vispy_example.py
 ```
 
 ## Dependencies
