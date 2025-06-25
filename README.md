@@ -4,6 +4,9 @@ A Python package providing the recommended colormaps from [Fuderer et al. (2024)
 
 The colormaps are based on the research presented in "Colormaps for quantitative magnetic resonance imaging" (Magnetic Resonance in Medicine, 2024) and are sourced from the [colorResources repository](https://github.com/mfuderer/colorResources).
 
+**WARNING** At the moment this package does not comply with the recommendations because it's not adapting to the underlying image, see [https://magneticresonanceimaging.github.io/QMRIColors.jl/dev/clip/](https://magneticresonanceimaging.github.io/QMRIColors.jl/dev/clip/) for an explanation.
+
+
 ## Installation
 
 Install the package directly from GitHub using uv (recommended) or pip:
