@@ -6,20 +6,20 @@ The colormaps are based on the research presented in "Colormaps for quantitative
 
 **WARNING** At the moment this package does not comply with the recommendations because it's not adapting to the underlying image, see [https://magneticresonanceimaging.github.io/QMRIColors.jl/dev/clip/](https://magneticresonanceimaging.github.io/QMRIColors.jl/dev/clip/) for an explanation.
 
-
 ## Installation
 
-Install the package directly from GitHub using uv (recommended) or pip:
+Install the package using uv (recommended) or pip:
 
 ```bash
 # Using uv
-uv add git+https://github.com/oscarvanderheide/qmricolors.git
+uv add qmricolors
 
 # Using pip
-pip install git+https://github.com/oscarvanderheide/qmricolors.git
+pip install qmricolors
 ```
 
 For development:
+
 ```bash
 git clone git@github.com:oscarvanderheide/qmricolors.git
 cd qmricolors
@@ -88,6 +88,7 @@ app.run()
 ```
 
 **Note**: If the VisPy window doesn't appear, this may be due to GUI backend issues. Try:
+
 1. Installing a GUI backend: `pip install PyQt5` or `pip install PySide2`
 2. On macOS, you may need to run Python from the terminal rather than an IDE
 3. Use the simple test script: `python test_vispy_simple.py`
@@ -139,19 +140,25 @@ Each line represents one color with three space-separated values for red, green,
 The package includes several example scripts to demonstrate usage:
 
 ### General Example
+
 Test basic colormap functionality:
+
 ```bash
 uv run qmricolors/examples/example.py
 ```
 
 ### Matplotlib Example
+
 See matplotlib-specific plotting examples:
+
 ```bash
 uv run qmricolors/examples/matplotlib_example.py
 ```
 
 ### VisPy Example
+
 Interactive 3D visualization with VisPy (requires GUI):
+
 ```bash
 uv run qmricolors/examples/vispy_example.py
 ```
@@ -164,7 +171,7 @@ uv run qmricolors/examples/vispy_example.py
 
 ## References
 
-- Fuderer, M., et al. (2024). Colormaps for quantitative magnetic resonance imaging. *Magnetic Resonance in Medicine*. https://pubmed.ncbi.nlm.nih.gov/39415361/
+- Fuderer, M., et al. (2024). Colormaps for quantitative magnetic resonance imaging. _Magnetic Resonance in Medicine_. https://pubmed.ncbi.nlm.nih.gov/39415361/
 - Original colormap resources: https://github.com/mfuderer/colorResources
 
 ## License
