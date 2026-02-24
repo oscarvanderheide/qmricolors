@@ -28,7 +28,7 @@ from .vispy_cmaps import (
     VISPY_CMAPS,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __all__ = [
     "register_matplotlib_colormaps",
     "register_vispy_colormaps",
@@ -82,4 +82,3 @@ try:
 except Exception as e:
     print(f"qMRI Colors: Warning - Could not register all colormaps: {e}")
     _registered_cmaps = None
-
