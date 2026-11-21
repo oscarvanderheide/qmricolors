@@ -4,8 +4,10 @@ VisPy colormap registration for qMRI colormaps.
 import csv
 import numpy as np
 from pathlib import Path
-from vispy.color import Colormap
-from vispy.color.colormap import _colormaps
+
+# VisPy is optional (``pip install qmricolors[vispy]``) and is imported only
+# when a VisPy colormap is requested: importing it can fail on machines
+# without OpenGL libraries, such as headless servers.
 
 
 def _load_colormap_data(filename):
@@ -30,6 +32,8 @@ def _load_colormap_data(filename):
 
 def _create_vispy_colormap(name, colors):
     """Create a VisPy colormap from RGB color data."""
+    from vispy.color import Colormap
+
     # VisPy expects colors as numpy array with shape (N, 3) or (N, 4)
     if colors.shape[1] == 3:
         # Add alpha channel if not present
@@ -44,6 +48,8 @@ def _create_vispy_colormap(name, colors):
 
 def register_vispy_colormaps():
     """Register qMRI colormaps with VisPy."""
+    from vispy.color.colormap import _colormaps
+
     # Load colormap data
     lipari_colors = _load_colormap_data('lipari.csv')
     navia_colors = _load_colormap_data('navia.csv')
@@ -61,6 +67,8 @@ def register_vispy_colormaps():
 
 def get_vispy_colormap(name):
     """Get a registered VisPy colormap by name."""
+    from vispy.color.colormap import _colormaps
+
     if name in _colormaps:
         return _colormaps[name]
     else:
@@ -71,6 +79,8 @@ def get_vispy_colormap(name):
 
 def list_vispy_colormaps():
     """List all available VisPy colormaps including qMRI ones."""
+    from vispy.color.colormap import _colormaps
+
     # Make sure our colormaps are registered
     register_vispy_colormaps()
     return list(_colormaps.keys())

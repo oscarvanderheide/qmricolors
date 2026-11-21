@@ -1,7 +1,8 @@
 """
 qMRI Colors - Custom colormaps for quantitative MRI visualization.
 
-This package provides lipari and navia colormaps for both matplotlib and vispy.
+This package provides lipari and navia colormaps for matplotlib, and for vispy
+when it is installed (``pip install qmricolors[vispy]``).
 Simply import this package to automatically register the colormaps.
 
 Usage:
@@ -28,7 +29,7 @@ from .vispy_cmaps import (
     VISPY_CMAPS,
 )
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __all__ = [
     "register_matplotlib_colormaps",
     "register_vispy_colormaps",
@@ -44,10 +45,19 @@ __all__ = [
 AVAILABLE_CMAPS = ["lipari", "navia"]
 
 
+def _vispy_available():
+    """True when VisPy is installed and loadable on this machine."""
+    try:
+        import vispy.color  # noqa: F401
+    except Exception:  # not installed, or no OpenGL library (headless)
+        return False
+    return True
+
+
 def register_all_colormaps():
-    """Register all qMRI colormaps with both matplotlib and vispy."""
+    """Register all qMRI colormaps with matplotlib, and with vispy if usable."""
     matplotlib_cmaps = register_matplotlib_colormaps()
-    vispy_cmaps = register_vispy_colormaps()
+    vispy_cmaps = register_vispy_colormaps() if _vispy_available() else None
     return {"matplotlib": matplotlib_cmaps, "vispy": vispy_cmaps}
 
 

@@ -4,18 +4,23 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qmricolors"
-version = "0.1.2"
+version = "0.1.3"
 requires-python = ">=3.12"
 description = "A Python package for easy access to the lipari and navia colormaps for quantitative MRI visualization."
 readme = "README.md"
 dependencies = [
     "matplotlib>=3.10.3",
-    "vispy>=0.15.2",
     "numpy>=1.21.0",
 ]
+
 license = "MIT"
 license-files = [
     "LICENSE",
+]
+
+[project.optional-dependencies]
+vispy = [
+    "vispy>=0.15.2",
 ]
 
 [dependency-groups]

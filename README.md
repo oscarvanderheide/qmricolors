@@ -18,6 +18,12 @@ uv add qmricolors
 pip install qmricolors
 ```
 
+VisPy support is optional:
+
+```bash
+pip install "qmricolors[vispy]"
+```
+
 For development:
 
 ```bash
